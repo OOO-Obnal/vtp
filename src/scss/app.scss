@@ -200,12 +200,31 @@ a {
 
 .video {
   position: relative;
+  height: 630px;
+  padding: 50px 0;
 
   &.active::before {
     content: "";
     display: block;
-    width: 20px;
-    height: 20px;
-    background: url(../assets/video.svg) no-repeat center;
+    width: 65px;
+    height: 65px;
+    padding: 10px;
+    border-radius: 100%;
+    background: #fff url(../assets/video.svg) no-repeat center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  video {
+    width: 930px;
+    height: 530px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

@@ -106,16 +106,18 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className={`video ${videoActive ? "active" : ""}`}>
-        <video
-          onClick={videoClick}
-          ref={myVideo}
-          width="400"
-          height="300"
-          poster={introSliderImgOne}
-        >
-          <source src={video} type="video/mp4" />
-        </video>
+      <div className="container">
+        <div className={`video ${videoActive ? "active" : ""}`}>
+          <video
+            onClick={videoClick}
+            ref={myVideo}
+            width="400"
+            height="300"
+            poster={introSliderImgOne}
+          >
+            <source src={video} type="video/mp4" />
+          </video>
+        </div>
       </div>
     </>
   );
