@@ -228,3 +228,117 @@ a {
     transform: translate(-50%, -50%);
   }
 }
+
+// card
+
+.card__s {
+  text-align: center;
+}
+
+.card__block {
+  justify-content: space-between;
+  margin-top: 50px;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  img {
+    width: 420px;
+    height: 500px;
+    border-radius: 10px;
+  }
+}
+
+//what he can
+
+.what::before {
+  position: absolute;
+  content: "";
+  width: 1440px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.51);
+  margin-left: 240px;
+  top: -15px;
+}
+
+.what::after {
+  position: absolute;
+  content: "";
+  width: 1440px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.51);
+  margin-left: 240px;
+  top: 710px;
+}
+
+.what {
+  position: relative;
+  background-color: #ecf8fc;
+  margin-top: 200px;
+
+  .slider {
+    width: 758px;
+    height: 547px;
+    background-color: #fff;
+    border-radius: 40px;
+    border: 7px solid $grey;
+  }
+
+  &__container {
+    align-items: center;
+    display: flex;
+    gap: 105px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  &__block {
+    width: 470px;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+    }
+    &__text {
+      font-family: "Nunito";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 27px;
+    }
+    &__ps {
+      margin-top: 70px;
+      font-family: "Nunito";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 27px;
+      color: rgba(0, 0, 0, 0.5);
+      text-align: end;
+      position: relative;
+    }
+    &__ps::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 1px;
+      left: 160px;
+      top: 30px;
+    }
+  }
+}
+
+// decisions
+
+.decisions {
+  margin-top: 200px;
+  text-align: center;
+}

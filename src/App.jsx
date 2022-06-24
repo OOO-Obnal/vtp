@@ -2,10 +2,15 @@ import React, { useRef, useState } from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import logoPng from "./assets/img/logo.png";
+import card1 from "./assets/img/card-1.svg";
+import card2 from "./assets/img/card-2.png";
+import card3 from "./assets/img/card-3.svg";
+import card5 from "./assets/img/card-5.svg";
 import introSliderImgOne from "./assets/img/intro-slider/picture-1.png";
 import video from "./assets/video.mp4";
 
 import "swiper/css";
+import Card from "./components/Card";
 
 const App = () => {
   const [videoActive, setVideoActive] = useState(true);
@@ -117,6 +122,51 @@ const App = () => {
           >
             <source src={video} type="video/mp4" />
           </video>
+        </div>
+      </div>
+      <div className="container">
+        <div className="card__s">
+          <h1>Мы предлагаем</h1>
+          <div className="card__block">
+            <Card src={card1} />
+            <Card src={card2} />
+            <Card src={card3} />
+            <Card src={card2} />
+            <Card src={card5} />
+            <Card src={card2} />
+          </div>
+        </div>
+      </div>
+      <div className="what">
+        <div className="container">
+          <div className="what__container">
+            <div className="slider">slider</div>
+            <div className="what__block">
+              <h1>ЧТО ОН УМЕЕТ?</h1>
+              <div className="what__block__container">
+                <div className="what__block__text">
+                  Качество нашей техники позволяет получить печать выского
+                  качества, которая в последствии прослужит долгое время.
+                </div>
+                <div className="what__block__text">
+                  Продукт, созданный на нашей технике будет иметь в своём
+                  арсенале исключительные превосходства, отличающие его от всех!
+                </div>
+              </div>
+              <div className="what__block__ps">
+                печать изображений на майках *
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="decisions">
+        <div className="container">
+          <h1>ГОТОВЫЕ РЕШЕНИЯ</h1>
+          <div className="decisions__block">
+            <div className="decisions__block__element"></div>
+          </div>
         </div>
       </div>
     </>
