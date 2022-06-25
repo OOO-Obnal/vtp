@@ -1,35 +1,49 @@
-import React, { useRef, useState } from "react";
-import { Autoplay, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import logoPng from "./assets/img/logo.png";
-import card1 from "./assets/img/card-1.svg";
-import card2 from "./assets/img/card-2.png";
-import card3 from "./assets/img/card-3.svg";
-import card5 from "./assets/img/card-5.svg";
-import introSliderImgOne from "./assets/img/intro-slider/picture-1.png";
-import video from "./assets/video.mp4";
+import React, { useRef, useState } from 'react';
+import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import logoPng from './assets/img/logo.png';
+import card1 from './assets/img/card-1.svg';
+import card2 from './assets/img/card-2.png';
+import card3 from './assets/img/card-3.svg';
+import card5 from './assets/img/card-5.svg';
+import introSliderImgOne from './assets/img/intro-slider/picture-1.png';
+import video from './assets/video.mp4';
 
-import "swiper/css";
-import Card from "./components/Card";
+import 'swiper/css';
+//import 'swiper/css/pagination';
+
+import Card from './components/Card';
+import { useEffect } from 'react';
 
 const App = () => {
   const [videoActive, setVideoActive] = useState(true);
-  const myVideo = useRef(null);
-  const videoClick = () => {
-    if (myVideo.current.paused) {
-      myVideo.current.play();
-      setVideoActive(false);
-    } else {
-      myVideo.current.pause();
-      setVideoActive(true);
-    }
-  };
+  const videoItem = useRef(null);
+  const videoBlock = useRef(null);
+  const whatButtonNext = useRef(null);
+  const whatButtonPrev = useRef(null);
+
+  useEffect(() => {
+    const onClickVideo = (event) => {
+      if (event.path.includes(videoBlock.current)) {
+        if (videoItem.current.paused) {
+          videoItem.current.play();
+          setVideoActive(false);
+        } else {
+          videoItem.current.pause();
+          setVideoActive(true);
+        }
+      }
+    };
+    document.body.addEventListener('click', onClickVideo);
+
+    return () => document.body.removeEventListener('click', onClickVideo);
+  }, []);
   return (
     <>
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
-            <a href="#" className="header__logo">
+            <a href={'ахуеть'} className="header__logo">
               <img src={logoPng} alt="logo" />
             </a>
             <ul className="header__info">
@@ -39,9 +53,7 @@ const App = () => {
               <li className="header__info-item">
                 <a href="tel:+78002014170">8-800-201-41-70</a>
               </li>
-              <li className="header__info-item">
-                НОВОСИБИРСК ОФИС: Н. ОСТРОВСКОГО, 37
-              </li>
+              <li className="header__info-item">НОВОСИБИРСК ОФИС: Н. ОСТРОВСКОГО, 37</li>
             </ul>
           </div>
         </div>
@@ -55,10 +67,9 @@ const App = () => {
                 Ваша собственная фабрика цифровой печати по текстилю из Японии!
               </h1>
               <div className="intro__info-desc">
-                Для самых смелых экспериментов и идей, будь то эксклюзивная
-                одежда, уникальные сумки, дизайн интерьера или украшение сцены и
-                праздников – Epson SC-F6300 Ваш незаменимый и надежный
-                инструмент!
+                Для самых смелых экспериментов и идей, будь то эксклюзивная одежда, уникальные
+                сумки, дизайн интерьера или украшение сцены и праздников – Epson SC-F6300 Ваш
+                незаменимый и надежный инструмент!
               </div>
               <div className="intro__info-sign">
                 Примеры из каталога
@@ -83,8 +94,7 @@ const App = () => {
                 loop={true}
                 speed={1000}
                 autoplay={{ delay: 2000, disableOnInteraction: false }}
-                freeMode={true}
-              >
+                freeMode={true}>
                 <SwiperSlide>
                   <div className="intro__slider-block">
                     <div>
@@ -112,16 +122,13 @@ const App = () => {
         </div>
       </div>
       <div className="container">
-        <div className={`video ${videoActive ? "active" : ""}`}>
-          <video
-            onClick={videoClick}
-            ref={myVideo}
-            width="400"
-            height="300"
-            poster={introSliderImgOne}
-          >
-            <source src={video} type="video/mp4" />
-          </video>
+        <div className={`video ${videoActive ? 'active' : ''}`}>
+          <div ref={videoBlock} className="video__wrapper">
+            <video ref={videoItem} poster={introSliderImgOne}>
+              <source src={video} type="video/mp4" />
+            </video>
+            {videoActive && <button className="video__button"></button>}
+          </div>
         </div>
       </div>
       <div className="container">
@@ -140,22 +147,52 @@ const App = () => {
       <div className="what">
         <div className="container">
           <div className="what__container">
-            <div className="slider">slider</div>
+            <div className="what__slider-wrapper">
+              <Swiper
+                className=".what__slider"
+                modules={[Pagination, Autoplay, Navigation]}
+                pagination={{
+                  type: 'fraction',
+                }}
+                spaceBetween={50}
+                slidesPerView={1}
+                direction="horizontal"
+                navigation={{
+                  prevEl: whatButtonPrev.current,
+                  nextEl: whatButtonNext.current,
+                }}
+                loop={true}
+                speed={1000}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                freeMode={true}>
+                <SwiperSlide>
+                  <div className="what__slider-block">Slide 1</div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="what__slider-block">Slide 2</div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="what__slider-block">Slide 3</div>
+                </SwiperSlide>
+              </Swiper>
+              <div className="what__slider-buttons">
+                <button ref={whatButtonPrev} className="what__slider-prev"></button>
+                <button ref={whatButtonNext} className="what__slider-next"></button>
+              </div>
+            </div>
             <div className="what__block">
               <h1>ЧТО ОН УМЕЕТ?</h1>
               <div className="what__block__container">
                 <div className="what__block__text">
-                  Качество нашей техники позволяет получить печать выского
-                  качества, которая в последствии прослужит долгое время.
+                  Качество нашей техники позволяет получить печать выского качества, которая в
+                  последствии прослужит долгое время.
                 </div>
                 <div className="what__block__text">
-                  Продукт, созданный на нашей технике будет иметь в своём
-                  арсенале исключительные превосходства, отличающие его от всех!
+                  Продукт, созданный на нашей технике будет иметь в своём арсенале исключительные
+                  превосходства, отличающие его от всех!
                 </div>
               </div>
-              <div className="what__block__ps">
-                печать изображений на майках *
-              </div>
+              <div className="what__block__ps">печать изображений на майках *</div>
             </div>
           </div>
         </div>
