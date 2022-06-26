@@ -29,7 +29,7 @@ const App = () => {
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
-            <a href="#" className="header__logo">
+            <a href="1" className="header__logo">
               <img src={logoPng} alt="logo" />
             </a>
             <ul className="header__info">
@@ -165,8 +165,21 @@ const App = () => {
         <div className="container">
           <h1>ГОТОВЫЕ РЕШЕНИЯ</h1>
           <div className="decisions__block">
-            <div className="decisions__block__element"></div>
+            <div className="decisions__block__elem"></div>
+            <div className="decisions__block__elem"></div>
+            <div className="decisions__block__elem"></div>
+            <div className="decisions__block__elem"></div>
+            <div className="decisions__block__elem"></div>
+            <div className="decisions__block__elem"></div>
+            <div className="decisions__block__elem"></div>
+            <div className="decisions__block__elem"></div>
           </div>
+        </div>
+      </div>
+      <div className="materials">
+        <div className="container">
+          <h1>МАТЕРИАЛЫ</h1>
+          <div className="materials__slider"></div>
         </div>
       </div>
     </>

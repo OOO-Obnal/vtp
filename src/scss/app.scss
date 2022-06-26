@@ -341,4 +341,50 @@ a {
 .decisions {
   margin-top: 200px;
   text-align: center;
+
+  &__block {
+    margin-top: 68px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__elem {
+      transition: 0.5s;
+      width: 360px;
+      height: 360px;
+      background-color: #000;
+    }
+    &__elem:hover {
+      transform: scale(1.2);
+    }
+    &__elem:first-child {
+      background-color: #f39a9a;
+    }
+    &__elem:nth-child(2) {
+      background-color: rgb(218, 127, 127);
+    }
+    &__elem:nth-child(3) {
+      background-color: rgb(206, 113, 113);
+    }
+    &__elem:nth-child(4) {
+      background-color: rgb(207, 108, 108);
+    }
+    &__elem:nth-child(5) {
+      background-color: #864578;
+    }
+    &__elem:nth-child(6) {
+      background-color: #9c558d;
+    }
+    &__elem:nth-child(7) {
+      background-color: #914881;
+    }
+    &__elem:nth-child(8) {
+      background-color: #b664a4;
+    }
+  }
+}
+
+// materials
+
+.materials {
+  text-align: center;
 }
