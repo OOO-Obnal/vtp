@@ -1,4 +1,4 @@
-@import "./_variables.scss";
+@import './_variables.scss';
 
 *,
 *::after,
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
@@ -59,10 +59,10 @@ a {
       cursor: pointer;
 
       &::after {
-        content: "|";
+        content: '|';
         font-size: 22px;
         font-weight: 500;
-        font-family: "Nunito", sans-serif;
+        font-family: 'Nunito', sans-serif;
         position: absolute;
         right: -13px;
         top: 50%;
@@ -71,7 +71,7 @@ a {
 
       &:last-child {
         &::after {
-          content: "";
+          content: '';
         }
       }
     }
@@ -94,7 +94,7 @@ a {
     position: relative;
 
     &::before {
-      content: "";
+      content: '';
       width: 3px;
       height: 100%;
       background-color: #000;
@@ -203,8 +203,17 @@ a {
   height: 630px;
   padding: 50px 0;
 
-  &.active::before {
-    content: "";
+  &__wrapper {
+    width: 930px;
+    height: 530px;
+    margin: 0 auto;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    border: none;
     display: block;
     width: 65px;
     height: 65px;
@@ -222,10 +231,6 @@ a {
   video {
     width: 930px;
     height: 530px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 }
 
@@ -255,22 +260,43 @@ a {
 
 .what::before {
   position: absolute;
-  content: "";
-  width: 1440px;
+  content: '';
+  max-width: 1440px;
+  width: 100%;
+  display: block;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.51);
   margin-left: 240px;
   top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .what::after {
   position: absolute;
-  content: "";
-  width: 1440px;
+  content: '';
+  max-width: 1440px;
+  width: 100%;
+  display: block;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.51);
   margin-left: 240px;
   top: 710px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal {
+  position: absolute;
+  bottom: 45px;
+  left: 45px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba($color: #000000, $alpha: 0.5);
+}
+
+.swiper-pagination-current {
+  color: #000;
 }
 
 .what {
@@ -278,12 +304,48 @@ a {
   background-color: #ecf8fc;
   margin-top: 200px;
 
-  .slider {
+  &__slider-wrapper {
     width: 758px;
     height: 547px;
     background-color: #fff;
     border-radius: 40px;
     border: 7px solid $grey;
+    position: relative;
+  }
+
+  &__slider {
+    &-block {
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 547px;
+    }
+
+    &-buttons {
+      z-index: 10;
+      position: absolute;
+      top: 45px;
+      left: 45px;
+      display: flex;
+      gap: 10px;
+    }
+
+    &-prev,
+    &-next {
+      border: none;
+      width: 29px;
+      height: 22px;
+      cursor: pointer;
+    }
+
+    &-prev {
+      background: url(../assets/prev.svg) no-repeat center;
+    }
+
+    &-next {
+      background: url(../assets/next.svg) no-repeat center;
+    }
   }
 
   &__container {
@@ -307,7 +369,7 @@ a {
       margin-bottom: 25px;
     }
     &__text {
-      font-family: "Nunito";
+      font-family: 'Nunito';
       font-style: normal;
       font-weight: 400;
       font-size: 20px;
@@ -315,7 +377,7 @@ a {
     }
     &__ps {
       margin-top: 70px;
-      font-family: "Nunito";
+      font-family: 'Nunito';
       font-style: normal;
       font-weight: 400;
       font-size: 20px;
@@ -325,7 +387,7 @@ a {
       position: relative;
     }
     &__ps::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 300px;
       background-color: rgba(0, 0, 0, 0.5);
