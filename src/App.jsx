@@ -137,7 +137,7 @@ const App = () => {
       </div>
       <div className="container">
         <div className="card__s">
-          <h1>Мы предлагаем</h1>
+          <h1>МЫ ПРЕДЛАГАЕМ</h1>
           <div className="card__block">
             <Card src={card1} />
             <Card src={card2} />
@@ -226,10 +226,98 @@ const App = () => {
           </div>
         </div>
       </div>
+
       <div className="materials">
-        <div className="container">
-          <h1>МАТЕРИАЛЫ</h1>
-          <div className="materials__slider"></div>
+        <h1 className="mat">МАТЕРИАЛЫ</h1>
+        <div className="materials__container">
+          <div className="container">
+            <div className="materials__center">
+              <div className="materials__el">
+                <div className="materials__el__img1"></div>
+                <h2 className="materials__el__h">Сублимационные чернила</h2>
+                <ul className="materials__el__text">
+                  <li>DS Black (Черный)</li>
+                  <li>DS Cyan (Голубой)</li>
+                  <li>DS Magenta (Пурпурный)</li>
+                  <li>DS Yellow (Желтый)</li>
+                </ul>
+              </div>
+              <div className="materials__el">
+                <div className="materials__el__img2"></div>
+                <h2 className="materials__el__h">Сублимационная бумага</h2>
+                <ul className="materials__el__text">
+                  <li>Xerox Sublim Paper 95г</li>
+                  <li>Champaper TRANSJET ECO II 95г</li>
+                  <li>JasperPaper 45/95 гр</li>
+                  <li>Trans Art N-type 90г</li>
+                </ul>
+              </div>
+              <div className="materials__el">
+                <div className="materials__el__img3"></div>
+                <h2 className="materials__el__h">Сублимационная ткань</h2>
+                <ul className="materials__el__text">
+                  <li>
+                    Тканевое полотно, в составе которого имеется не менее 50%
+                    полиэстера.
+                  </li>
+                  <li>
+                    Позволяет перенести практически любую яркую картинку на
+                    материал либо готовое изделие.
+                  </li>
+                </ul>
+              </div>
+              <div className="materials__el">
+                <div className="materials__el__img4"></div>
+                <h2 className="materials__el__h">
+                  Защитная бумага + тефлоновые листы
+                </h2>
+                <ul className="materials__el__text">
+                  <li>
+                    Используется для защиты верхней нагревательной плиты и
+                    нижней термостойкой пористой резины от грязи, нагара,
+                    царапин.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="format">
+        <h1>ФОРМАТНЫЕ ТЕРМОПРЕССЫ</h1>
+        <div className="format__container">
+          <div className="container">
+            <div className="format__block">
+              <div className="format__el bor__first">
+                <div className="format__el__img1"></div>
+                <h2>Термопресс Schulze Blue PRESS SWING</h2>
+                <div className="format__el__text">
+                  Надёжный поворотный термопресс. Модель с плоской
+                  нагревательной нагревательной плитой рабочей площадью 40х50 см
+                </div>
+                <button>Узнать больше</button>
+              </div>
+              <div className="format__el bor__second">
+                <div className="format__el__img2"></div>
+                <h2>Термопресс Schulze BLUE PRESS LINE SIZE 3</h2>
+                <div className="format__el__text">
+                  Вертикально-откидной термопресс. Модель с плоской
+                  нагревательной плитой рабочей площадью 40х50 см
+                </div>
+                <button>Узнать больше</button>
+              </div>
+              <div className="format__el bor__third">
+                <div className="format__el__img3"></div>
+                <h2>Термопресс LOPO Neptune Press</h2>
+                <div className="format__el__text">
+                  Плоский термопресс Neptune Press - прочный и надёжный пресс
+                  высокого давления с рабочей областью 50х40 см
+                </div>
+                <button className="buttt">Узнать больше</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
